@@ -41,6 +41,11 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'user_app',
+    'joke_app',
+    'category_app',
+    'comment_app',
+    'updownvote_app',
+    'jokeimage_app',
 ]
 
 MIDDLEWARE = [
