@@ -1,0 +1,229 @@
+[
+  {
+    "model": "category_app.category",
+    "pk": 1,
+    "fields": {
+      "name": "Puns",
+      "description": "Playful jokes that rely on wordplay."
+    }
+  },
+  {
+    "model": "category_app.category",
+    "pk": 2,
+    "fields": {
+      "name": "Dad Jokes",
+      "description": "Cheesy and corny jokes that are often groan-worthy."
+    }
+  },
+  {
+    "model": "category_app.category",
+    "pk": 3,
+    "fields": {
+      "name": "Knock-knock Jokes",
+      "description": "Interactive jokes with a call-and-response format."
+    }
+  },
+  {
+    "model": "user_app.client",
+    "pk": 1,
+    "fields": {
+      "display_name": "hilarious_harry",
+      "email": "harry@example.com",
+      "bio": "I love making people laugh!"
+    }
+  },
+  {
+    "model": "joke_app.joke",
+    "pk": 1,
+    "fields": {
+      "title": "What do you call a lazy kangaroo?",
+      "content": "Pouch potato!",
+      "category": 1,
+      "author": 1,
+      "created_at": "2023-01-01T12:00:00Z",
+      "upvote": 3,
+      "downvote": 1
+    }
+  },
+  {
+    "model": "comment_app.comment",
+    "pk": 1,
+    "fields": {
+      "content": "Haha! That's a good one!",
+      "joke": 1,
+      "author": 2,
+      "created_at": "2023-01-01T12:05:00Z"
+    }
+  },
+  {
+    "model": "comment_app.comment",
+    "pk": 2,
+    "fields": {
+      "content": "I don't get it...",
+      "joke": 1,
+      "author": 3,
+      "created_at": "2023-01-01T12:10:00Z"
+    }
+  },
+  {
+    "model": "joke_app.joke",
+    "pk": 2,
+    "fields": {
+      "title": "Why did the scarecrow win an award?",
+      "content": "Because he was outstanding in his field!",
+      "category": 2,
+      "author": 1,
+      "created_at": "2023-01-02T12:00:00Z",
+      "upvote": 2,
+      "downvote": 0
+    }
+  },
+  {
+    "model": "comment_app.comment",
+    "pk": 3,
+    "fields": {
+      "content": "I can't believe I haven't heard that one before!",
+      "joke": 2,
+      "author": 4,
+      "created_at": "2023-01-02T12:05:00Z"
+    }
+  },
+  {
+    "model": "user_app.client",
+    "pk": 2,
+    "fields": {
+      "display_name": "laughing_laura",
+      "email": "laura@example.com",
+      "bio": "Always up for a good laugh!"
+    }
+  },
+  {
+    "model": "joke_app.joke",
+    "pk": 3,
+    "fields": {
+      "title": "What's the best thing about Switzerland?",
+      "content": "I don't know, but the flag is a big plus!",
+      "category": 3,
+      "author": 2,
+      "created_at": "2023-01-03T12:00:00Z",
+      "upvote": 1,
+      "downvote": 0
+    }
+  },
+  {
+    "model": "comment_app.comment",
+    "pk": 4,
+    "fields": {
+      "content": "Oh man, that's cheesy!",
+      "joke": 3,
+      "author": 1,
+      "created_at": "2023-01-03T12:05:00Z"
+    }
+  },
+  {
+    "model": "comment_app.comment",
+    "pk": 5,
+    "fields": {
+      "content": "I see what you did there!",
+      "joke": 3,
+      "author": 5,
+      "created_at": "2023-01-03T12:10:00Z"
+    }
+  },
+  {
+    "model": "user_app.client",
+    "pk": 3,
+    "fields": {
+      "display_name": "serious_sam",
+      "email": "sam@example.com",
+      "bio": "I prefer my jokes dry and witty."
+    }
+  },
+  {
+    "model": "joke_app.joke",
+    "pk": 4,
+    "fields": {
+      "title": "What do you call a fish with no eyes?",
+      "content": "Fsh!",
+      "category": 1,
+      "author": 3,
+      "created_at": "2023-01-04T12:00:00Z",
+      "upvote": 0,
+      "downvote": 1
+    }
+  },
+  {
+    "model": "comment_app.comment",
+    "pk": 6,
+    "fields": {
+      "content": "I appreciate the classic humor!",
+      "joke": 4,
+      "author": 1,
+      "created_at": "2023-01-04T12:05:00Z"
+    }
+  },
+  {
+    "model": "user_app.client",
+    "pk": 4,
+    "fields": {
+      "display_name": "giggling_george",
+      "email": "george@example.com",
+      "bio": "Easily amused and always ready to laugh!"
+    }
+  },
+  {
+    "model": "joke_app.joke",
+    "pk": 5,
+    "fields": {
+      "title": "Why did the scarecrow win an award?",
+      "content": "Because he was outstanding in his field!",
+      "category": 2,
+      "author": 4,
+      "created_at": "2023-01-05T12:00:00Z",
+      "upvote": 1,
+      "downvote": 0
+    }
+  },
+  {
+    "model": "comment_app.comment",
+    "pk": 7,
+    "fields": {
+      "content": "Great minds think alike!",
+      "joke": 5,
+      "author": 2,
+      "created_at": "2023-01-05T12:05:00Z"
+    }
+  },
+  {
+    "model": "user_app.client",
+    "pk": 5,
+    "fields": {
+      "display_name": "punny_peter",
+      "email": "peter@example.com",
+      "bio": "I love puns and wordplay!"
+    }
+  },
+  {
+    "model": "joke_app.joke",
+    "pk": 6,
+    "fields": {
+      "title": "What do you call a lazy kangaroo?",
+      "content": "Pouch potato!",
+      "category": 1,
+      "author": 5,
+      "created_at": "2023-01-06T12:00:00Z",
+      "upvote": 2,
+      "downvote": 0
+    }
+  },
+  {
+    "model": "comment_app.comment",
+    "pk": 8,
+    "fields": {
+      "content": "Love it!",
+      "joke": 6,
+      "author": 1,
+      "created_at": "2023-01-06T12:05:00Z"
+    }
+  }
+]

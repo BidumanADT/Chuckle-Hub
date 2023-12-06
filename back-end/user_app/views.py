@@ -1,5 +1,5 @@
 from django.contrib.auth import authenticate
-from .models import Client
+from .serializers import ClientSerializer, Client
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.status import (
@@ -16,6 +16,10 @@ from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 class Sign_Up(APIView):
     def post(self, request):
+        # serializer = ClientSerializer(data=request.data)
+        # serializer.is_valid(raise_exception=True)
+        # serializer.save()
+        # client = serializer.instance
         request.data["username"] = request.data["email"]
         client = Client.objects.create_user(**request.data)
         token = Token.objects.create(user=client)
