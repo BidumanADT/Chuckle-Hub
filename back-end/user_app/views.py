@@ -1,5 +1,5 @@
 from django.contrib.auth import authenticate
-from .serializers import ClientSerializer, Client
+from .serializers import Client
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.status import (
@@ -16,15 +16,11 @@ from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 class Sign_Up(APIView):
     def post(self, request):
-        # serializer = ClientSerializer(data=request.data)
-        # serializer.is_valid(raise_exception=True)
-        # serializer.save()
-        # client = serializer.instance
         request.data["username"] = request.data["email"]
         client = Client.objects.create_user(**request.data)
         token = Token.objects.create(user=client)
         return Response(
-            {"client": client.email, "token": token.key}, status=HTTP_201_CREATED
+            {"client": client.display_name, "token": token.key}, status=HTTP_201_CREATED
         )
 
 
@@ -35,7 +31,7 @@ class Log_in(APIView):
         client = authenticate(username=email, password=password)
         if client:
             token, created = Token.objects.get_or_create(user=client)
-            return Response({"token": token.key, "client": client.email})
+            return Response({"token": token.key, "client": client.display_name})
         else:
             return Response("No client matching credentials", status=HTTP_404_NOT_FOUND)
 
@@ -47,3 +43,5 @@ class Log_out(UserPermissions):
     def post(self, request):
         request.user.auth_token.delete()
         return Response(status=HTTP_204_NO_CONTENT)
+    
+# todo: add put methods for updating bio and display_name

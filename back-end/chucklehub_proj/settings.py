@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'comment_app',
     'updownvote_app',
     'jokeimage_app',
+    'api_app',
 ]
 
 MIDDLEWARE = [
