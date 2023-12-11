@@ -64,6 +64,13 @@
       "password": "pw",
       "bio": "I laugh at my own bad jokes."
     }
+  },
+
+  {
+    "display_name": "biduman",
+    "email": "biduman@adt.com",
+    "password": "adt",
+    "bio": "I explain bad jokes to mayself and laugh even harder."
   }
   
 ]

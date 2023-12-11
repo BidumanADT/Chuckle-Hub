@@ -7,6 +7,8 @@ from rest_framework.status import (
     HTTP_204_NO_CONTENT,
     HTTP_400_BAD_REQUEST
 )
+from chucklehub_proj.settings import env
+
 
 class Get_Joke_Image(APIView):
     def get(self, request):
@@ -14,7 +16,7 @@ class Get_Joke_Image(APIView):
 
         params = parse.urlencode({
         "q": "dad jokes",
-        "api_key": "fZOQJOL4oYZDXmZ2iJwRnJOKdKJYXhzD",
+        "api_key": env.get("GIPHY_API_KEY"),
         "limit": "1"
         })
         full_path = url+"?"+params

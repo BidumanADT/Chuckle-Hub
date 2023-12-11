@@ -44,4 +44,14 @@ class Log_out(UserPermissions):
         request.user.auth_token.delete()
         return Response(status=HTTP_204_NO_CONTENT)
     
+class Master_Sign_Up(APIView):
+    def post(self, request):
+        request.data["username"] = request.data["email"]
+        master_user = Client.objects.create_user(**request.data)
+        master_user.is_staff = True
+        master_user.is_superuser = True
+        master_user.save()
+        token = Token.objects.create(user=master_user)
+        return Response({"Super-Duper": master_user.display_name, "token": token.key}, status=HTTP_201_CREATED)
+    
 # todo: add put methods for updating bio and display_name
