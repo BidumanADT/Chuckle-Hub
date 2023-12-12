@@ -1,14 +1,16 @@
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import { Outlet } from "react-router-dom";
+import { Navbar } from "./components/Navbar";
 
-import './App.css'
-
-function App() {
-
-
+export default function App() {
   return (
-    <>
-      <h1>Landing Page</h1>
-    </>
-  )
+    <Container>
+      <Row style={{ textAlign: "center" }}>
+        <h1>Personal Project: Chuckle-Hub</h1>
+      </Row>
+      <Navbar />
+      <Outlet />
+    </Container>
+  );
 }
-
-export default App
