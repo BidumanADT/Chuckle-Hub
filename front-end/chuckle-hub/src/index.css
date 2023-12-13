@@ -1,0 +1,23 @@
+.app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .card-container {
+    border: 2px solid #ccc;
+    padding: 20px;
+    width: 60vmin; /* Adjust the width as needed */
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .text-container {
+    flex: 1;
+  }
+  
+  .image-container {
+    flex: 1;
+    text-align: right;
+  }
