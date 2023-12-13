@@ -38,10 +38,10 @@ const router = createBrowserRouter([
       {
         path: "random-joke/",
         element: <RandomJokePage />,
-      }
+      },
     ],
     errorElement: <NotFoundPage />,
   },
 ]);
 
-export default router
+export default router;
