@@ -53,5 +53,9 @@ class Master_Sign_Up(APIView):
         master_user.save()
         token = Token.objects.create(user=master_user)
         return Response({"Super-Duper": master_user.display_name, "token": token.key}, status=HTTP_201_CREATED)
-    
+
+class Info(UserPermissions):
+    def get(self, request):
+        return Response({"user":request.user.display_name})    
+
 # todo: add put methods for updating bio and display_name
