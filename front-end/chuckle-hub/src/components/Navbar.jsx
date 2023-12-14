@@ -1,14 +1,17 @@
 import Row from "react-bootstrap/esm/Row";
 import { Link } from "react-router-dom";
 import { api } from "../utilities";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = ({ client, setClient }) => {
+    const navigate = useNavigate()
     const logOut = async () => {
         let response = await api.post("users/logout/");
         if (response.status === 204) {
           setClient(null);
           localStorage.removeItem("token");
           delete api.defaults.headers.common["Authorization"];
+          navigate("/")
         }
     }
     return (
