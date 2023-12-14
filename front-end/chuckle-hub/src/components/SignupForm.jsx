@@ -11,33 +11,19 @@ const SignupForm = ({ onSubmit }) => {
   };
 
   return (
-    <div>
-      <form>
-        <label>Email:</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label>Password:</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <label>Display Name (optional):</label>
-        <input
-          type="text"
-          value={display_name}
-          onChange={(e) => setDisplay_name(e.target.value)}
-        />
-        <label>Bio (optional):</label>
-        <textarea value={bio} onChange={(e) => setBio(e.target.value)} />
-        <button type="button" onClick={handleSubmit}>
-          Submit
-        </button>
-      </form>
-    </div>
+    <div className="signup-form">
+  <form>
+    <label>Email:</label>
+    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+    <label>Password:</label>
+    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+    <label>Display Name (optional):</label>
+    <input type="text" value={display_name} onChange={(e) => setDisplay_name(e.target.value)} />
+    <label>Bio (optional):</label>
+    <textarea value={bio} onChange={(e) => setBio(e.target.value)} />
+    <button type="button" onClick={handleSubmit}>Submit</button>
+  </form>
+</div>
   );
 };
 

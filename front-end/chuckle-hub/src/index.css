@@ -21,3 +21,89 @@
     flex: 1;
     text-align: right;
   }
+
+  /* Styling for SignupForm */
+.signup-form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  background-color: #283c4a;
+  color: #fff;
+}
+
+.signup-form form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+  
+}
+
+.signup-form label {
+  margin-bottom: 8px;
+}
+
+.signup-form input,
+.signup-form textarea {
+  margin-bottom: 16px;
+  padding: 8px;
+  width: 100%;
+}
+
+.signup-form button {
+  background-color: #12ed12;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.signup-form button:hover {
+  background-color: #3cb929;
+}
+
+.signup-form textarea {
+  height: 80px;
+}
+
+/* Styling for LoginForm */
+.login-form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  background-color: #283c4a;
+  color: #fff;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.login-form label {
+  margin-bottom: 8px;
+}
+
+.login-form input {
+  margin-bottom: 16px;
+  padding: 8px;
+  width: 100%;
+}
+
+.login-form button {
+  background-color: #12ed12;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.login-form button:hover {
+  background-color: #3cb929;
+}
+
+.login-form .center-text {
+  text-align: center;
+}
