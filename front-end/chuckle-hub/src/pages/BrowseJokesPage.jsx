@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { api } from "../utilities";
-// import { useOutletContext } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 const BrowseJokesPage = () => {
-  const [allJokes, setAllJokes] = useState([]);
-//   const [ client ] = useOutletContext();
+  const [allJokes, setAllJokes] = useState({});
+  const {client} = useOutletContext();
 
   const getAllJokes = async () => {
     let response = api.get("jokes/all_jokes/");

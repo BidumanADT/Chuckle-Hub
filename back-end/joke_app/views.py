@@ -66,6 +66,12 @@ class Get_User_Jokes(UserPermissions):
     
 class Get_All_Jokes(APIView):
     def get(self, request):
+        jokes = Joke.objects.all()
+        ser_jokes = JokeSerializer(jokes, many=True)
+        return Response(ser_jokes.data)
+    
+class Get_Jokes_By_Category(APIView):
+    def get(self, request):
         jokes = Joke.objects.all().select_related('category')
         ser_jokes = JokeSerializer(jokes, many=True)
         return Response(ser_jokes.data)

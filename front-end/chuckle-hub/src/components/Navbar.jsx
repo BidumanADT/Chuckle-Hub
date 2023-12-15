@@ -17,10 +17,10 @@ export const Navbar = ({ client, setClient }) => {
     }
   };
 
-  useEffect(()=>{
-    console.log(id)
-    console.log(client)
-  }, []);
+  // useEffect(()=>{
+  //   console.log(id)
+  //   console.log(client)
+  // }, []);
 
   return (
     <>

@@ -23,4 +23,5 @@ urlpatterns = [
     path('api/v1/jokes/', include('joke_app.urls')),
     path('api/v1/random/', include("api_app.urls")),
     path('api/v1/images/', include('jokeimage_app.urls')),
+    path('api/v1/categories/', include('category_app.urls')),
 ]
