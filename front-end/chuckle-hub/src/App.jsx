@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { api } from "./utilities";
 
 export default function App() {
-  const [client, setClient] = useState(null);
+  const [client, setClient] = useState({});
 
   const getUser = async () => {
     let token = localStorage.getItem("token");
@@ -14,7 +14,7 @@ export default function App() {
       api.defaults.headers.common["Authorization"] = `Token ${token}`;
       try {
         let response = await api.get("users/");
-        setClient(response.data.client);
+        setClient(response.data);
       } catch (error) {
         console.error("something went wrong getting user info:", error);
         setClient(null);

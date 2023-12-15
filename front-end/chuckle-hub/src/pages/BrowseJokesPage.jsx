@@ -10,7 +10,7 @@ const BrowseJokesPage = () => {
     let response = api.get("jokes/all_jokes/");
     if (response.status === 200) {
       console.log(response);
-    //   setAllJokes(response.data);
+      setAllJokes(response.data);
       // console.log(allJokes);
     } else {
       alert("something went wrong");

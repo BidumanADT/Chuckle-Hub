@@ -18,26 +18,27 @@ export const Navbar = ({ client, setClient }) => {
   };
 
   useEffect(()=>{
+    console.log(id)
     console.log(client)
   }, []);
 
   return (
     <>
-      {/* {client ? ( */}
+      {client ? (
         <Row style={{ display: "flex", justifyContent: "space-around" }}>
-          <Link to={`/user/${id}/`}>My Profile</Link>
+          <Link to={`/user/${client.id}/`}>My Profile</Link>
           <Link to="browse-jokes/">Browse Jokes</Link>
           {/* <Link to="popular/">Most Popular</Link> */}
           <Link to="random-joke/">Random Joke</Link>
           <Link to="/">login page</Link>
           <button onClick={logOut}>Log Out</button>
         </Row>
-      {/* ) : (
+       ) : (
         <Row style={{ display: "flex", justifyContent: "space-around" }}>
             <p>Please log in or sign up to enter the site</p>
-          {/* <Link to={"/"}>Login/Signup</Link> */}
-        {/* </Row> */}
-      {/* )} */}
+           <Link to={"/"}>Login/Signup</Link>
+         </Row> 
+       )}
     </>
   );
 };

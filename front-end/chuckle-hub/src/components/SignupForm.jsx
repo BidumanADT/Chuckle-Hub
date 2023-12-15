@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useOutletContext } from "react-router";
 
 const SignupForm = ({ onSubmit }) => {
   const [display_name, setDisplay_name] = useState("");
   const [bio, setBio] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
