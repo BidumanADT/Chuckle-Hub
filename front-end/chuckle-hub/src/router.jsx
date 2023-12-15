@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         element: <SignInUpPage />,
       },
       {
-        path: "user/<int:id>/",
+        path: "user/:id/",
         element: <AUserPage />,
       },
       {
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         element: <BrowseJokesPage />,
       },
       {
-        path: "joke/<int:id>/",
+        path: "joke/:id/",
         element: <AJokePage />,
       },
       {

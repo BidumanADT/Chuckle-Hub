@@ -2,20 +2,21 @@ import { useState } from "react";
 import LoginForm from "../components/LoginForm";
 import SignupForm from "../components/SignupForm";
 import { api } from "../utilities";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 // todo: send users to their actual page when form is submitted
 
 const SignInUpPage = () => {
   const [showSignup, setShowSignup] = useState(false);
   const navigate = useNavigate();
+  const { id } = useParams();
 
   const handleLogin = async (credentials) => {
     let response = await api.post("users/login/", credentials)
     if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
         api.defaults.headers.common["Authorization"] = `Token ${response.data.token}`;
-        navigate("/user/<int:id>/")
+        navigate(`/user/${response.data.id}/`)
     } else {
         alert("something went wrong")
     }
@@ -32,7 +33,7 @@ const SignInUpPage = () => {
     if (response.status === 201){
         localStorage.setItem("token", response.data.token);
         api.defaults.headers.common["Authorization"] = `Token ${response.data.token}`;
-        navigate("/user/<int:id>/")
+        navigate(`/user/${response.data.id}/`)
     } else {
         alert("something went wrong")
     }

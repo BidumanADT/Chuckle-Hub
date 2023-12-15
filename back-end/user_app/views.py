@@ -31,7 +31,7 @@ class Log_in(APIView):
         client = authenticate(username=email, password=password)
         if client:
             token, created = Token.objects.get_or_create(user=client)
-            return Response({"token": token.key, "client": client.display_name})
+            return Response({"token": token.key, "client": client.display_name, "id": client.id})
         else:
             return Response("No client matching credentials", status=HTTP_404_NOT_FOUND)
 
@@ -56,6 +56,6 @@ class Master_Sign_Up(APIView):
 
 class Info(UserPermissions):
     def get(self, request):
-        return Response({"user":request.user.display_name})    
+        return Response({"user":request.user.display_name, "id":request.user.id})    
 
 # todo: add put methods for updating bio and display_name
