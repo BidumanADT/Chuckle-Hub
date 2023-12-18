@@ -1,6 +1,7 @@
 import json
 from urllib import parse, request as rqst
 import requests
+import random
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.status import (
@@ -19,11 +20,12 @@ class Get_Joke_Image(APIView):
         #     "q": "laugh",
         #     "rating": "pg-13"
         # })
-
+        random_number = random.randint(0, 155)
         params = parse.urlencode({
         "q": "dad jokes",
         "api_key": env.get("GIPHY_API_KEY"),
-        "limit": "1"
+        "limit": "1",
+        "offset": random_number
         })
         full_path = url+"?"+params
         response = requests.get(full_path)
