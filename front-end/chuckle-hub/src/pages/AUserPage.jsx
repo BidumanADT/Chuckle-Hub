@@ -9,9 +9,10 @@ const AUserPage = () => {
 
   useEffect(() => {
     const getUserJokes = async () => {
+      // console.log(client)
       try {
-        const response = api.get(`jokes/user_jokes/${client.id}`);
-        console.log(response.data);
+        const response = await api.get(`jokes/user_jokes/${client.id}/`);
+        // console.log(response.data);
         setUserJokes(response.data);
       } catch (error) {
         console.error("something went wrong getting user jokes:", error);
@@ -25,11 +26,14 @@ const AUserPage = () => {
       <div>
         <div>
           <h2>Your Posted Jokes</h2>
-          <ul>
-            {userJokes && userJokes.map((joke) => (
-              <li key={joke.id}>{joke.content}</li>
+          {userJokes ? (
+          <ol>
+            {userJokes.map((joke) => (
+              <li key={joke.id}>{joke.title}<br />{joke.content}</li>
             ))}
-          </ul>
+          </ol>) : (
+              <p>You haven't posted any jokes yet</p>
+            )}
         </div>
       </div>
 

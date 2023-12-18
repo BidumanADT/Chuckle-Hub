@@ -3,25 +3,37 @@ import { api } from "../utilities";
 import { useOutletContext } from "react-router-dom";
 
 const BrowseJokesPage = () => {
-  const [allJokes, setAllJokes] = useState({});
-  const {client} = useOutletContext();
-
-  const getAllJokes = async () => {
-    let response = api.get("jokes/all_jokes/");
-    if (response.status === 200) {
-      console.log(response);
-      setAllJokes(response.data);
-      // console.log(allJokes);
-    } else {
-      alert("something went wrong");
-    }
-  };
+  const [allJokes, setAllJokes] = useState([]);
+  const { client } = useOutletContext();
 
   useEffect(() => {
-    // console.log(client);
+    const getAllJokes = async () => {
+      let response = await api.get("jokes/all_jokes/");
+      if (response.status === 200) {
+        console.log(response.data);
+        setAllJokes(response.data);
+        // console.log(allJokes);
+      } else {
+        alert("something went wrong getting jokes");
+      }
+    };
     getAllJokes();
   }, []);
 
-  return <h1>a page for browsing current jokes will go here</h1>;
+  return (
+    <>
+      <div>
+      <h2>Current Jokes</h2>
+        {allJokes ? (
+          <ol>
+            {allJokes.map((joke) => (
+              <li key={joke.id}>Category: {joke.category.name}<br />{joke.title}<br />{joke.content}<br />Posted by: {joke.author.display_name}</li>
+            ))}
+          </ol>) : (
+            <p>Joke database loading...</p>
+        )}
+      </div>
+    </>
+  );
 };
 export default BrowseJokesPage;

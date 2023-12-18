@@ -30,7 +30,7 @@ export const Navbar = ({ client, setClient }) => {
           <Link to="browse-jokes/">Browse Jokes</Link>
           {/* <Link to="popular/">Most Popular</Link> */}
           <Link to="random-joke/">Random Joke</Link>
-          <Link to="/">login page</Link>
+          {/* <Link to="/">login page</Link> */}
           <button onClick={logOut}>Log Out</button>
         </Row>
        ) : (
