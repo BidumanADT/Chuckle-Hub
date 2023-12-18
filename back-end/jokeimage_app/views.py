@@ -13,6 +13,12 @@ from chucklehub_proj.settings import env
 class Get_Joke_Image(APIView):
     def get(self, request):
         url = "http://api.giphy.com/v1/gifs/search"
+        
+        # params = parse.urlencode({
+        #     "api_key": env.get("GIPHY_API_KEY"),
+        #     "q": "laugh",
+        #     "rating": "pg-13"
+        # })
 
         params = parse.urlencode({
         "q": "dad jokes",
@@ -27,5 +33,8 @@ class Get_Joke_Image(APIView):
             joke_image_url = data['data'][0]['images']['downsized']['url']
             return Response(joke_image_url)
         else:
+            # print(full_path)
             print("Error:", response.status_code)
             return Response(response.status_code)
+
+# https://api.giphy.com/v1/gifs/random?api_key=fZOQJOL4oYZDXmZ2iJwRnJOKdKJYXhzD&tag=dad+jokes&rating=pg-13

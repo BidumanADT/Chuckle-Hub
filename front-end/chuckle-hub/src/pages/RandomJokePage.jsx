@@ -12,7 +12,7 @@ const RandomJokePage = () => {
       setJoke(response.data);
       // console.log(joke);
     } else {
-      alert("something went wrong");
+      alert("something went wrong getting random joke");
     }
   };
   // todo: giphy api is returning the same image everytime; refactor back-end to fix
@@ -22,7 +22,7 @@ const RandomJokePage = () => {
       setJokeImage(response.data);
       // console.log(jokeImage);
     } else {
-      alert("something went wrong");
+      alert("something went wrong getting image");
     }
   };
 
