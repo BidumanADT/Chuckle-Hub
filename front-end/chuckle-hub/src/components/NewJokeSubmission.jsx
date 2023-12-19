@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { api } from "../utilities";
 
-const NewJokeSubmission = ({ client }) => {
+const NewJokeSubmission = ({ client, onJokeSubmitted }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [categories, setCategories] = useState([]);
@@ -32,8 +32,9 @@ const NewJokeSubmission = ({ client }) => {
     };
 
     try {
-      console.log(payload);
+      // console.log(payload);
       const response = await api.post("jokes/create_joke/", payload);
+      onJokeSubmitted();
       if (response.status === 201) {
         console.log("Joke posted successfully!");
       }
@@ -45,7 +46,7 @@ const NewJokeSubmission = ({ client }) => {
   return (
     <div>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="joke-form">
           <label>
             Title:
             <input
@@ -54,7 +55,7 @@ const NewJokeSubmission = ({ client }) => {
               onChange={(e) => setTitle(e.target.value)}
             />
           </label>
-
+          <br />
           <label>
             Content:
             <textarea
@@ -62,7 +63,7 @@ const NewJokeSubmission = ({ client }) => {
               onChange={(e) => setContent(e.target.value)}
             />
           </label>
-
+          <br />
           <label>
             Category:
             <select

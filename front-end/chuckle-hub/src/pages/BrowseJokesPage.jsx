@@ -10,7 +10,7 @@ const BrowseJokesPage = () => {
     const getAllJokes = async () => {
       let response = await api.get("jokes/all_jokes/");
       if (response.status === 200) {
-        console.log(response.data);
+        // console.log(response.data);
         setAllJokes(response.data);
         // console.log(allJokes);
       } else {

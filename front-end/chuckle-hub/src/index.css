@@ -106,3 +106,68 @@
   text-align: center;
 }
 
+.main-container {
+  display: flex;
+  width: 100%;
+}
+
+.joke-collection {
+  flex: 3;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.new-joke-form {
+  flex: 1;
+  padding: 20px;
+  background-color: #eee;
+}
+
+.joke-card {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.joke-form {
+  margin: 0; 
+  padding: 15px;
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+.joke-card .delete-button {
+  display: inline-block;
+  margin-left: 10px;
+  /* position: relative; */
+  top: -5px;
+}
+
+.delete-button button {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.joke-card .edit-button {
+  display: inline-block;
+  margin-right: 10px;
+  /* position: relative; */
+  top: -5px;
+}
+
+.joke-card .edit-button button {
+  background-color: #ffcc00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
