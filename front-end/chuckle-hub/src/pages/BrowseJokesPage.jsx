@@ -22,18 +22,26 @@ const BrowseJokesPage = () => {
 
   return (
     <>
-      <div>
-      <h2>Current Jokes</h2>
-        {allJokes ? (
-          <ol>
-            {allJokes.map((joke) => (
-              <li key={joke.id}>Category: {joke.category.name}<br />{joke.title}<br />{joke.content}<br />Posted by: {joke.author.display_name}</li>
-            ))}
-          </ol>) : (
-            <p>Joke database loading...</p>
-        )}
+  <div>
+    <h2>Current Jokes</h2>
+    {allJokes ? (
+      <div className="browse-joke-cards"> 
+        {allJokes.map((joke) => (
+          <div key={joke.id} className="browse-joke-card">
+            <h3>{joke.title}</h3>
+            <p>{joke.content}</p>
+            <div className="joke-meta">
+              <span>Category: {joke.category.name}</span>
+              <span>Posted by: {joke.author.display_name}</span>
+            </div>
+          </div>
+        ))}
       </div>
-    </>
+    ) : (
+      <p>Joke database loading...</p>
+    )}
+  </div>
+</>
   );
 };
 export default BrowseJokesPage;

@@ -1,4 +1,5 @@
 import NewJokeSubmission from "../components/NewJokeSubmission";
+import EditJokeModal from "../components/EditJokeModal";
 import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
 import { api } from "../utilities";
@@ -6,6 +7,8 @@ import { api } from "../utilities";
 const AUserPage = () => {
   const { client } = useOutletContext();
   const [userJokes, setUserJokes] = useState([]);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [selectedJoke, setSelectedJoke] = useState(null);
 
   const getUserJokes = async () => {
     // console.log(client)
@@ -35,6 +38,22 @@ const AUserPage = () => {
     }
   };
 
+  const handleEditJoke = (joke) => {
+    try {
+      // console.log("edit button clicked");
+      setSelectedJoke(joke);
+      setIsEditModalOpen(true);
+    } catch (error) {
+      console.error("something went wrong with opening edit modal: ", error);
+    }
+  };
+
+  const handleCloseModal = () => {
+    // console.log("modal closed");
+    setIsEditModalOpen(false);
+    getUserJokes()
+  };
+
   return (
     <>
       <div className="main-container">
@@ -48,7 +67,7 @@ const AUserPage = () => {
                   <br />
                   {joke.content}
                   <span className="edit-button">
-                    <button onClick={() => handleEditJoke(joke.id)}>
+                    <button onClick={() => handleEditJoke(joke)}>
                       Edit
                     </button>
                   </span>
@@ -70,6 +89,15 @@ const AUserPage = () => {
             client={{ client }}
             onJokeSubmitted={onJokeSubmitted}
           />
+        </div>
+        <div>
+          {isEditModalOpen && (
+            <EditJokeModal
+              modalShow={isEditModalOpen}
+              closeModal={handleCloseModal}
+              selectedJoke={selectedJoke}
+            />
+          )}
         </div>
       </div>
     </>
