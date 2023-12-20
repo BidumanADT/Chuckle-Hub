@@ -31,7 +31,10 @@ export default function App() {
   return (
     <Container>
       <Row style={{ textAlign: "center" }}>
-        <img className="pagetopLogo" src='./public/ch-main-logo-cropped.jpeg'></img>
+        <img
+          className="pagetopLogo"
+          src="./public/ch-main-logo-cropped.jpeg"
+        ></img>
       </Row>
       <Navbar client={client} setClient={setClient} />
       <Outlet context={{ client, setClient }} />
