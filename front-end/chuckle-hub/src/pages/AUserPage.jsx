@@ -51,7 +51,7 @@ const AUserPage = () => {
   const handleCloseModal = () => {
     // console.log("modal closed");
     setIsEditModalOpen(false);
-    getUserJokes()
+    getUserJokes();
   };
 
   return (
@@ -63,13 +63,13 @@ const AUserPage = () => {
             <ul>
               {userJokes.map((joke) => (
                 <li key={joke.id} className="joke-card">
-                  {joke.title}
-                  <br />
-                  {joke.content}
+                  <div className="joke-content">
+                    {joke.title}
+                    <br />
+                    {joke.content}
+                  </div>
                   <span className="edit-button">
-                    <button onClick={() => handleEditJoke(joke)}>
-                      Edit
-                    </button>
+                    <button onClick={() => handleEditJoke(joke)}>Edit</button>
                   </span>
                   <span className="delete-button">
                     <button onClick={() => handleDeleteJoke(joke.id)}>

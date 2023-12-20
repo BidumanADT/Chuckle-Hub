@@ -1,3 +1,20 @@
+
+/* body {
+  background-image: url("../public/stage-bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100vw auto;
+} */
+
+h1, h2 {
+  font-family: 'Rubik Bubble', rubik-bubble;
+  font-weight: 400;
+}
+
+.pagetopLogo {
+  width: 33.33%;
+  height: auto;
+}
+
 .app-container {
     display: flex;
     justify-content: center;
@@ -132,6 +149,13 @@
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.joke-card .joke-content { 
+  flex-grow: 1; 
 }
 
 .joke-form {
@@ -140,13 +164,6 @@
   display: flex; 
   flex-direction: column; 
   gap: 10px; 
-}
-
-.joke-card .delete-button {
-  display: inline-block;
-  margin-left: 10px;
-  /* position: relative; */
-  top: -5px;
 }
 
 .delete-button button {
@@ -159,12 +176,6 @@
   cursor: pointer;
 }
 
-.joke-card .edit-button {
-  display: inline-block;
-  margin-right: 10px;
-  /* position: relative; */
-  top: -5px;
-}
 
 .joke-card .edit-button button {
   background-color: #ffcc00;
@@ -174,6 +185,14 @@
   padding: 5px 10px;
   font-size: 12px;
   cursor: pointer;
+}
+
+.joke-card .edit-button,
+.joke-card .delete-button {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+
 }
 
 /* -------------- Edit Joke Modal ----------- */
@@ -222,45 +241,33 @@ opacity: 0;
   cursor: pointer;
 }
 
-/* .modal-body { */
-  /* Adjust for form styles */
-/* } */
-
 .modal-footer {
   display: flex;
   justify-content: flex-end;
   margin-top: 15px;
 }
 
-/* .secondary-button { */
-  /* Adjust button styles */
-/* } */
-
-/* .primary-button { */
-  /* Adjust button styles */
-/* } */
-
 /* --------------- Browse-Joke Card Styling ------------ */
 
 .browse-joke-cards {
-  display: flex; /* Display cards in a row */
-  flex-wrap: wrap; /* Wrap cards to multiple rows if needed */
-  gap: 1rem; /* Add spacing between cards */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
 }
 
 .browse-joke-card {
-  border: 1px solid #ccc; /* Add border */
+  border: 1px solid #ccc; 
   padding: 1rem;
-  border-radius: 5px; /* Add rounded corners */
-  margin-bottom: 1rem; /* Add bottom margin */
+  border-radius: 5px; 
+  margin-bottom: 1rem; 
 }
 
 .browse-joke-card h3 {
-  margin-top: 0; /* Remove default top margin from h3 */
+  margin-top: 0; 
 }
 
 .joke-meta {
-  font-size: 0.9rem; /* Adjust font size for meta information */
-  color: #888; /* Adjust color for meta information */
-  margin-top: 1rem; /* Add spacing above meta information */
+  font-size: 0.9rem;
+  color: #888; 
+  margin-top: 1rem; 
 }

@@ -24,14 +24,6 @@ export default function App() {
     }
   };
 
-  // const token = localStorage.getItem("token");
-  // if (token) {
-  //   setClient({ username: "loading..." });
-  //   getUser();
-  // } else {
-  //   alert("something went wrong");
-  // }
-
   useEffect(() => {
     getUser();
   }, []);
@@ -39,7 +31,7 @@ export default function App() {
   return (
     <Container>
       <Row style={{ textAlign: "center" }}>
-        <h1>Personal Project: Chuckle-Hub</h1>
+        <img className="pagetopLogo" src='./public/ch-main-logo-cropped.jpeg'></img>
       </Row>
       <Navbar client={client} setClient={setClient} />
       <Outlet context={{ client, setClient }} />
